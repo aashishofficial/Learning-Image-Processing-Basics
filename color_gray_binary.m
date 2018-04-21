@@ -1,11 +1,12 @@
 close all; clear all;
 a=imread('silence.jpg');
 b=rgb2gray(a);
-%c=(b>128);  this line can also convert gray into binary with level=0.5(i.e. intensity=128)
+level=input('Enter threshhold level : ');
+%c=(b>level);  this line can also convert gray into binary with level=0.5(i.e. intensity=128)
 [m,n]=size(b);
 for i=1:m
     for j=1:n
-        if (b(i,j)>=128)
+        if (b(i,j)>=level)
             c(i,j)=1;
         else
             c(i,j)=0;
